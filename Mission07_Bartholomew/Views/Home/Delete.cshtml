@@ -1,0 +1,16 @@
+﻿@model Mission07_Bartholomew.Models.Movie
+
+@{
+    ViewData["Title"] = "Delete Movie";
+}
+
+<h2>Confirm Deletion</h2>
+<br />
+
+<p>Are you sure you want to delete <strong>@Model.Title</strong> from Joel's collection?</p>
+
+<form method="post" asp-controller="Home" asp-action="Delete">
+    <input type="hidden" asp-for="MovieId" />
+    <button type="submit" class="btn btn-danger">Yes, Delete It</button>
+    <a class="btn btn-secondary" asp-controller="Home" asp-action="MovieList">Cancel</a>
+</form>

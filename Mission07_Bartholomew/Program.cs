@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using Mission06_Bartholomew.Models;
+using Mission07_Bartholomew.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 

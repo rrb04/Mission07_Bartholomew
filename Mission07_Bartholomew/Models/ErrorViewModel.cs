@@ -1,4 +1,4 @@
-namespace Mission06_Bartholomew.Models
+namespace Mission07_Bartholomew.Models
 {
     public class ErrorViewModel
     {

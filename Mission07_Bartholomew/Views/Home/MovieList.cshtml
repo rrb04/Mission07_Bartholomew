@@ -1,0 +1,47 @@
+﻿@model List<Mission07_Bartholomew.Models.Movie>
+
+@{
+    ViewData["Title"] = "Movie Collection";
+}
+
+<div class="text-center">
+    <h2>Joel's Complete Movie Collection</h2>
+</div>
+<br />
+
+<table class="table table-bordered table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th>Category</th>
+            <th>Title</th>
+            <th>Year</th>
+            <th>Director</th>
+            <th>Rating</th>
+            <th>Edited</th>
+            <th>Lent To</th>
+            <th>On Plex</th>
+            <th>Notes</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var m in Model)
+        {
+            <tr>
+                <td>@m.Category?.CategoryName</td>
+                <td>@m.Title</td>
+                <td>@m.Year</td>
+                <td>@m.Director</td>
+                <td>@m.Rating</td>
+                <td>@(m.Edited ? "Yes" : "No")</td>
+                <td>@m.LentTo</td>
+                <td>@(m.CopiedToPlex ? "Yes" : "No")</td>
+                <td>@m.Notes</td>
+                <td>
+                    <a class="btn btn-sm btn-warning" asp-controller="Home" asp-action="Edit" asp-route-id="@m.MovieId">Edit</a>
+                    <a class="btn btn-sm btn-danger" asp-controller="Home" asp-action="Delete" asp-route-id="@m.MovieId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
